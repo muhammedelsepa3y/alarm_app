@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 
 class AudioManager {
@@ -7,12 +8,12 @@ class AudioManager {
     try {
       final bool result = await platform.invokeMethod('requestAudioFocus');
       if (result) {
-        print("Audio focus granted");
+        debugPrint("Audio focus granted");
       } else {
-        print("Audio focus denied");
+        debugPrint("Audio focus denied");
       }
     } on PlatformException catch (e) {
-      print("Failed to get audio focus: '${e.message}'.");
+      debugPrint("Failed to get audio focus: '${e.message}'.");
     }
   }
 }

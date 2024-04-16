@@ -1,10 +1,7 @@
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
+
 buildscript {
+    ext.kotlin_version = '1.8.10'  // Check for the latest version and use it here
+
     repositories {
         google()
         mavenCentral()
@@ -12,6 +9,12 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:7.3.1'
 
+    }
+}
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
     }
 }
 rootProject.buildDir = '../build'
